@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Untuk CiiMnyunnQ — Dari Dammar ❤️</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#ff9aa2;
+      --bg2:#ffd6e0;
+      --accent:#ff5c8a;
+      --muted:#5c5166;
+      --card: rgba(255,255,255,0.12);
+    }
+
+    *{box-sizing:border-box}
+    html, body{
+      margin:0; padding:0;
+      height:100%; font-family:Montserrat,system-ui,Arial;
+      scroll-behavior:smooth; background: linear-gradient(180deg,var(--bg1),var(--bg2));
+      color:#111; -webkit-font-smoothing:antialiased;
+      overflow-y:auto;
+    }
+
+    body { display:block; }
+
+    .sheet{
+      width:100%; max-width:920px; margin:0 auto;
+      border-radius:18px; padding:22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      box-shadow: 0 10px 30px rgba(2,6,23,0.25); 
+      position:relative; 
+      overflow-y:auto; max-height:95vh; 
+    }
+
+    header{display:flex;gap:18px;align-items:center}
+    .logo{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffd166);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display';font-size:30px;color:white}
+    h1{margin:0;font-family:'Playfair Display';font-size:28px;color:#3b1037}
+    .lead{margin:6px 0 0;color:rgba(59,16,55,0.75)}
+
+    .stage{display:grid;grid-template-columns:1fr 340px;gap:18px;margin-top:18px}
+    .card{background:var(--card);padding:18px;border-radius:14px;backdrop-filter: blur(6px)}
+    .center{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%}
+
+    .hero{font-size:20px;color:#3b1037;text-align:center}
+    .sub{font-size:14px;color:rgba(59,16,55,0.65);margin-top:10px;text-align:center}
+
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#ff9aa2);color:white;text-decoration:none;font-weight:700;cursor:pointer;border:none}
+    .muted{color:#6b5168;font-size:13px}
+
+    .photo{
+      height:220px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;
+    }
+    .photo img{width:100%;height:100%;object-fit:cover}
+
+    .message-box{white-space:pre-wrap;font-size:16px;color:#2e0f2d; min-height:120px}
+
+    @media (max-width:900px){
+      .stage{grid-template-columns:1fr;}
+      .photo{height:200px}
+    }
+
+    .hearts{position:absolute;left:0;top:0;pointer-events:none;width:100%;height:100%}
+    .heart{position:absolute;width:20px;height:20px;background:var(--accent);transform:rotate(-45deg);border-radius:3px;opacity:0}
+    .heart:before,.heart:after{content:'';position:absolute;width:20px;height:20px;border-radius:50%;background:var(--accent)}
+    .heart:before{top:-10px;left:0}.heart:after{left:10px;top:0}
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="hearts" id="hearts"></div>
+
+    <header>
+      <div class="logo">❤</div>
+      <div>
+        <h1 id="title">Happy Anniversary — CiiMnyunnQ</h1>
+        <div class="lead">Sebuah surat kecil dari Dammar, penuh cinta & maaf.</div>
+      </div>
+    </header>
+
+    <div class="stage">
+      <div class="card">
+        <div class="center">
+          <div class="hero" id="introText">Halo sayang — klik tombol <strong>Buka Kejutan</strong> untuk melihat pesan yang kususun khusus untukmu.</div>
+          <div class="sub">Semoga kamu suka dan mau maafin ak yahh</div>
+          <div style="height:16px"></div>
+          <button id="openBtn" class="btn">Buka Kejutan</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="photo" id="photoArea">
+            <img id="mainPhoto" alt="Foto kami berdua" src="foto.jpg">
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+          <label class="btn" style="cursor:pointer">
+            Unggah Foto
+            <input id="imgInput" type="file" accept="image/*" style="display:none">
+          </label>
+          <button id="downloadBtn" class="btn" style="background:linear-gradient(90deg,#7b2a4a,#ff7aa2)">Download Kartu</button>
+        </div>
+
+        <div style="margin-top:12px">
+          <div class="muted">Nama panggilan</div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <input id="nameA" placeholder="Dammar" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent">
+            <input id="nameB" placeholder="Valeryna" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent">
+          </div>
+
+          <div style="height:8px"></div>
+          <div class="muted">Tanggal</div>
+          <h3 id="date" style="color:#d63384;font-family:'Montserrat',sans-serif;margin-top:10px;">
+            19 Oktober 2025 💞
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <div class="message-box" id="messageBox">Halo manyuunQ jangan manyun terus yaa coba klik "Buka Kejutan".</div>
+    </div>
+
+    <footer style="margin-top:12px;text-align:center;color:rgba(59,16,55,0.6);font-size:13px">Surprise khusus untuk Valeryna.</footer>
+  </div>
+
+  <audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2022/08/01/audio_6d6b40f26a.mp3?filename=romantic-piano-ambient-116199.mp3" preload="auto"></audio>
+
+  <script>
+    const DEFAULT_TITLE = "Happy Anniversary, CiiMnyunnQ 💖";
+    const CONFESSION = `CiiMnyunnQ Cayannnkkkk,\n\nDari hari pertama kita bertemu, kamu selalu jadi alasan aku tersenyum. Terima kasih sudah sabar, setia, dan selalu ada disampingQ.`;
+    const APOLOGY = `\n\nMaafkan aku jika pernah membuatmu terluka, marah, atau kecewa. Aku berusaha jadi lebih baik setiap hari demi kamu.`;
+    const CLOSING = `\n\nSelamat Anniversary CiiManyunnQ. Aku mencintaimu, sekarang dan selamanya. — Dammar ❤️`;
+
+    document.getElementById('title').textContent = DEFAULT_TITLE;
+    document.title = DEFAULT_TITLE;
+
+    const openBtn = document.getElementById('openBtn');
+    const typeEl = document.getElementById('messageBox');
+    const hearts = document.getElementById('hearts');
+    const imgInput = document.getElementById('imgInput');
+    const mainPhoto = document.getElementById('mainPhoto');
+    const nameA = document.getElementById('nameA');
+    const nameB = document.getElementById('nameB');
+    const dateInput = document.getElementById('date');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const bgMusic = document.getElementById('bgMusic');
+
+    let opened = false;
+
+    function spawnHeart(){
+      const h = document.createElement('div');
+      h.className = 'heart';
+      const size = 10 + Math.random()*28;
+      h.style.width = size+'px';
+      h.style.height = size+'px';
+      h.style.left = Math.random()*100+'%';
+      h.style.top = (60 + Math.random()*30)+'%';
+      hearts.appendChild(h);
+      const dur = 2500 + Math.random()*2600;
+      h.animate([
+        { transform:'translateY(0) scale(1)', opacity:1 },
+        { transform:'translateY(-160px) scale(1.4)', opacity:0 }
+      ], { duration: dur, easing: 'ease-out' });
+      setTimeout(()=>h.remove(), dur+80);
+    }
+
+    function startHearts(){ 
+      for(let i=0;i<14;i++) setTimeout(spawnHeart, i*140); 
+      window._heartInterval = setInterval(spawnHeart, 900); 
+    }
+
+    async function typeTextAutoScroll(el, text, speed=28){
+      el.textContent = '';
+      for(let i=0; i<text.length; i++){
+        el.textContent += text[i];
+        el.scrollIntoView({behavior: 'smooth', block: 'end'});
+        await new Promise(r=>setTimeout(r,speed));
+      }
+    }
+
+    async function openSurprise() {
+      if (opened) return;
+      opened = true;
+
+      startHearts();
+      try { if (bgMusic.src) bgMusic.play().catch(()=>{}); } catch(e) {}
+
+      openBtn.textContent = 'Sedang membuka...';
+      await typeTextAutoScroll(document.getElementById('introText'), 'Membuka pesan khusus untukmu... 😊', 30);
+      await new Promise(r=>setTimeout(r,500));
+
+      const who = (nameA.value && nameB.value) ? `${nameA.value} untuk ${nameB.value}` : 'Untukmu';
+      const dateText = dateInput.textContent ? `\n\nTanggal: ${dateInput.textContent}` : '';
+      const full = `${who}\n\n${CONFESSION}${APOLOGY}${CLOSING}${dateText}`;
+      await typeTextAutoScroll(typeEl, full, 28);
+
+      openBtn.textContent = 'Terbuka ✓';
+      openBtn.disabled = true;
+    }
+
+    openBtn.addEventListener('click', openSurprise);
+
+    imgInput.addEventListener('change', e=>{
+      const f = e.target.files && e.target.files[0];
+      if(!f) return;
+      const reader = new FileReader();
+      reader.onload = ()=> mainPhoto.src = reader.result;
+      reader.readAsDataURL(f);
+    });
+
+    downloadBtn.addEventListener('click', ()=>{
+      const canvas = document.createElement('canvas');
+      canvas.width = 1200; canvas.height = 675;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#ffd6e0'; ctx.fillRect(0,0,canvas.width,canvas.height);
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = ()=>{
+        const dw = 520, dh = 340;
+        ctx.drawImage(img, canvas.width-dw-60, 60, dw, dh);
+        ctx.fillStyle = '#3b1037';
+        ctx.font = '36px Playfair Display, serif';
+        const title = (nameA.value && nameB.value) ? `${nameA.value} & ${nameB.value}` : 'Untukmu';
+        ctx.fillText(title, 60, 120);
+        ctx.font = '20px Montserrat, sans-serif';
+        const lines = (typeEl.textContent||'').split('\n');
+        let y=170;
+        ctx.fillStyle='#5c5168';
+        for(let i=0;i<8 && i<lines.length;i++){ ctx.fillText(lines[i], 60, y); y+=28; }
+        const link = document.createElement('a');
+        link.download = 'kartu_anniversary.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+      img.src = mainPhoto.src;
+    });
+
+    [nameA,nameB].forEach(i=>i.addEventListener('keydown',e=>{ if(e.key==='Enter') openSurprise(); }));
+  </script>
+</body>
+</html>
